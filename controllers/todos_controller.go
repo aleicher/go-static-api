@@ -48,7 +48,6 @@ func GetTodos(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println("error:", err)
 	}
-	log.Println("%s", todos)
 	RenderJson(w, todos, 200)
 
 }
