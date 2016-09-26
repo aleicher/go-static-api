@@ -7,14 +7,14 @@ import (
 	"strconv"
 
 	"github.com/aleicher/go-static-api/controllers"
-	"github.com/aleicher/go-static-api/routes"
+	"github.com/aleicher/go-static-api/routing"
 )
 
 func main() {
 	port := flag.Int("port", 3000, "port to run")
 	flag.Parse()
 
-	router := routes.AppRouter()
+	router := routing.AppRouter()
 	controllers.RegisterRoutes(router)
 
 	server := &http.Server{
