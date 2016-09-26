@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/aleicher/go-static-api/controllers"
 	"github.com/aleicher/go-static-api/routes"
 )
 
@@ -14,6 +15,7 @@ func main() {
 	flag.Parse()
 
 	router := routes.AppRouter()
+	controllers.RegisterRoutes(router)
 
 	server := &http.Server{
 		Addr:    ":" + strconv.Itoa(*port),
